@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADATreeSearch", "ADATreeSearch\ADATreeSearch.csproj", "{8E57876D-6544-4C15-88CB-660E698CFA46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueADT", "QueueADT\QueueADT.csproj", "{98258EDD-C136-47ED-8D89-897AE0305DFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeADT", "NodeADT\NodeADT.csproj", "{FE8F943B-F932-48D7-91AD-7D1B5A826529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E57876D-6544-4C15-88CB-660E698CFA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E57876D-6544-4C15-88CB-660E698CFA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E57876D-6544-4C15-88CB-660E698CFA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E57876D-6544-4C15-88CB-660E698CFA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98258EDD-C136-47ED-8D89-897AE0305DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98258EDD-C136-47ED-8D89-897AE0305DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98258EDD-C136-47ED-8D89-897AE0305DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98258EDD-C136-47ED-8D89-897AE0305DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8F943B-F932-48D7-91AD-7D1B5A826529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8F943B-F932-48D7-91AD-7D1B5A826529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8F943B-F932-48D7-91AD-7D1B5A826529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8F943B-F932-48D7-91AD-7D1B5A826529}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B8472F2-5781-419F-B843-7B7AC9357C66}
+	EndGlobalSection
+EndGlobal
