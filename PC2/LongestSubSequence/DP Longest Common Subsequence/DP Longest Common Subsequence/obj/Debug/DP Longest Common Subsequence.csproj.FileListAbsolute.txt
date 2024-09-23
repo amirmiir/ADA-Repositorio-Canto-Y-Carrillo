@@ -1,0 +1,7 @@
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\obj\Debug\DP Longest Common Subsequence.csproj.AssemblyReference.cache
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\obj\Debug\DP Longest Common Subsequence.csproj.CoreCompileInputs.cache
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\bin\Debug\DP Longest Common Subsequence.exe.config
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\bin\Debug\DP Longest Common Subsequence.exe
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\bin\Debug\DP Longest Common Subsequence.pdb
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\obj\Debug\DP Longest Common Subsequence.exe
+C:\Users\amirc\Desktop\UNI\24-2\Análisis y Diseño de Algoritmos\ADA-PC2\PC2\LongestSubSequence\DP Longest Common Subsequence\DP Longest Common Subsequence\obj\Debug\DP Longest Common Subsequence.pdb
