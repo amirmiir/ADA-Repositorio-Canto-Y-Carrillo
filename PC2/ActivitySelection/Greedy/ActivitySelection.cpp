@@ -37,8 +37,8 @@ void generateRandomActivities(Activity arr[], int n)
     srand(time(0)); 
 
     for (int i = 0; i < n; i++) {
-        int start = rand() % 11; 
-        int finish = start + (rand() % 11) + 1; 
+        int start = rand() % n/1+1; 
+        int finish = start + (rand() % n/2+1) + 1; 
         arr[i] = { start, finish };
     }
 }
@@ -59,7 +59,7 @@ int main()
     }
 	
 	clock_t start = clock();
-    printMaxActivities(arr, n);
+	printMaxActivities(arr, n);
 	clock_t end = clock();
 	
 	double elapsedTime = double(end - start)/CLOCKS_PER_SEC;
