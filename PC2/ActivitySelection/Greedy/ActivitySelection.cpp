@@ -1,23 +1,21 @@
-// C++ program for activity selection problem
-// when input activities may not be sorted.
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Activitiy {
+struct Activity {
     int start, finish;
 };
 
-bool activityCompare(Activitiy s1, Activitiy s2)
+bool activityCompare(Activity s1, Activity s2)
 {
     return (s1.finish < s2.finish);
 }
 
-void printMaxActivities(Activitiy arr[], int n)
+void printMaxActivities(Activity arr[], int n)
 {
 
     sort(arr, arr + n, activityCompare);
 
-    cout << "Following activities are selected :\n";
+    cout << "Las siguientes actividades fueron escogidas :\n";
 
     int i = 0;
     cout << "(" << arr[i].start << ", " << arr[i].finish
@@ -30,15 +28,43 @@ void printMaxActivities(Activitiy arr[], int n)
             i = j;
         }
     }
+    
+    cout << endl;
+}
+
+void generateRandomActivities(Activity arr[], int n)
+{
+    srand(time(0)); 
+
+    for (int i = 0; i < n; i++) {
+        int start = rand() % 11; 
+        int finish = start + (rand() % 11) + 1; 
+        arr[i] = { start, finish };
+    }
 }
 
 int main()
 {
-    Activitiy arr[] = { { 5, 9 }, { 1, 2 }, { 3, 4 },
-                        { 0, 6 }, { 5, 7 }, { 8, 9 } };
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    cout << "Ingrese el número de actividades: ";
+    cin >> n;
 
+    Activity* arr = new Activity[n]; 
+
+    generateRandomActivities(arr, n);
+
+    cout << "Actividades generadas (inicio, fin):\n";
+    for (int i = 0; i < n; i++) {
+        cout << "(" << arr[i].start << ", " << arr[i].finish << ")\n";
+    }
+	
+	clock_t start = clock();
     printMaxActivities(arr, n);
+	clock_t end = clock();
+	
+	double elapsedTime = double(end - start)/CLOCKS_PER_SEC;
+	
+	cout << "El algoritmo demoró " << elapsedTime << "segundos en ejecutarse." << endl;
     return 0;
 }
 
