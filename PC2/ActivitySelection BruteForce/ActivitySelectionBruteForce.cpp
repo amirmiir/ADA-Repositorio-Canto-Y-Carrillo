@@ -2,63 +2,82 @@
 using namespace std;
 
 /*  Estructura de la actividad */
-struct activity{
-
+struct Activity {
     int start, end;
 };
 
+bool activityCompare(Activity s1, Activity s2)
+{
+    return (s1.end < s2.end);
+}
+
 /*
-    Función que seleciona un conjunto maximo de actividades que pueden ser ejecutadas,
+    Función que selecciona un conjunto máximo de actividades que pueden ser ejecutadas,
     dado que solo una actividad puede ejecutarse a la vez en todo momento.
 */ 
-void solve(int n, vector<activity> actvty){
-
+void activitySelectionBacktracking(int n, vector<Activity>& actvty) {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    int x, y;
-    for (auto x: actvty){
-        /*  Dado que ordenamos por tiempo de finalización that que insertaremos
-            actividades en una cola-de-prioridad con un tiempo de fin e inicio.
-        */
+
+    for (auto x : actvty) {
+        // Insertar actividades en la cola de prioridad con fin y comienzo
         pq.push({x.end, x.start});
     }
 
     cout << "Las actividades se eligen en el siguiente orden: ";
-    /*  Siempre seleccionaremos la actividad con el menor tiempo de finalización */
-    x = 0;
 
+    // Seleccionamos la primera actividad
     auto current = pq.top();
     auto start = current.second;
     auto end = current.first;
-
     pq.pop();
 
     cout << "{" << start << "," << end << "} ";
 
-    /*  Para seleccionar del resto de las actividades */
-    while (!pq.empty()){
-    
+    // Seleccionamos del resto de las actividades
+    while (!pq.empty()) {
         current = pq.top();
         pq.pop();
 
-        /* 
-            Una actividad será seleccionada si esta tiene un tiempo
-            de inicio mayor que la de el tiempo de fin de la actividad
-            anterior.
-        */ 
-        if (current.second >= end){
-        
+        /*Seleccionamos actividad si su inicio es mayor al final de la anterior*/
+        if (current.second >= end) {
             start = current.second;
             end = current.first;
-
             cout << "{" << start << "," << end << "} ";
         }
     }
+    cout << endl;
 }
 
+void generateRandomActivities(vector<Activity>& arr, int n) {
+    srand(time(0)); 
+    for (int i = 0; i < n; i++) {
+        int start = rand() % (n + 1);  /*Valor entre 0 y n*/ 
+        int finish = start + (rand() % (n / 2 + 1));  /*Valor entre start y n*/
+        arr.push_back({start, finish});
+    }
+}
 
-int main(){
+int main() {
+    int n;
+    cout << "Ingrese el número de actividades: ";
+    cin >> n;
 
-    int n = 6;
-    vector<activity> actvty = {{1, 2}, {4, 4}, {5, 10}, {9, 10}, {7, 8}, {2, 4}};
-    solve(n, actvty);
+    vector<Activity> activities; 
+
+    generateRandomActivities(activities, n);
+
+    cout << "Actividades generadas (inicio, fin):\n";
+    for (int i = 0; i < n; i++) {
+        cout << "(" << activities[i].start << ", " << activities[i].end << ")\n";
+    }
+    
+    clock_t start = clock();
+    activitySelectionBacktracking(n, activities);
+    clock_t end = clock();
+    
+    double elapsedTime = double(end - start)/CLOCKS_PER_SEC;
+    
+    cout << "El algoritmo demoró " << elapsedTime << " segundos en ejecutarse." << endl;
+
+    return 0;
 }
