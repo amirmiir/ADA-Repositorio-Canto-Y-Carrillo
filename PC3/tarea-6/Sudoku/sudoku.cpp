@@ -3,8 +3,11 @@
 
 using namespace std;
 
-int get_cell(int row, int col);
+/*  
 
+    Declaración de funciones
+
+ */
 pair<int, int> nextEmptyPosition(vector<vector<char>> &board, int row, int col);
 
 bool isValid(vector<vector<char>> &board, int row, int col, char num);
@@ -18,6 +21,12 @@ void printBoard(const vector<vector<char>> &board);
 void sudokuPredeterminado();
 
 void sudokuPersonalizado();
+
+/*  
+    
+    Main
+
+*/
 
 int main() {
     cout << "SUDOKU\n";
@@ -48,15 +57,23 @@ int main() {
     return 0;
 }
 
+/*
+
+
+Funciones necesarias para el algoritmo
+
+
+*/
+
 pair<int, int> nextEmptyPosition(vector<vector<char>> &board, int row, int col) {
     while (row < 9) {
         if (board[row][col] == '.') {
-            return make_pair(row, col); // Replace with make_pair in C++11
+            return make_pair(row, col);
         }
         col = (col + 1) % 9;
         row = row + (col == 0 ? 1 : 0);
     }
-    return make_pair(9, 0); // End of board
+    return make_pair(9, 0);
 }
 
 bool isValid(vector<vector<char>> &board, int row, int col, char num) {
@@ -74,8 +91,7 @@ bool solve(vector<vector<char>> &board, int row, int col) {
     int r = pos.first;
     int c = pos.second;
 
-    if (r == 9) // End of board
-        return true;
+    if (r == 9) return true;
 
     for (char num = '1'; num <= '9'; num++) {
         if (isValid(board, r, c, num)) {
