@@ -48,10 +48,6 @@ int main() {
     return 0;
 }
 
-int get_cell(int row, int col) {
-    return (row / 3) * 3 + col / 3;
-}
-
 pair<int, int> nextEmptyPosition(vector<vector<char>> &board, int row, int col) {
     while (row < 9) {
         if (board[row][col] == '.') {
@@ -85,7 +81,7 @@ bool solve(vector<vector<char>> &board, int row, int col) {
         if (isValid(board, r, c, num)) {
             board[r][c] = num;
             if (solve(board, r, c)) return true;
-            board[r][c] = '.'; // Reset if solution not found
+            board[r][c] = '.';
         }
     }
     return false;
