@@ -3,27 +3,27 @@
 
 using namespace std;
 
-/*  
+/*
 
     Declaración de funciones
 
  */
+
+bool solveSudoku(vector<vector<char>> &board);
+
+bool solve(vector<vector<char>> &board, int row, int col);
+
 pair<int, int> nextEmptyPosition(vector<vector<char>> &board, int row, int col);
 
 bool isValid(vector<vector<char>> &board, int row, int col, char num);
 
-bool solve(vector<vector<char>> &board, int row, int col);
-
-void solveSudoku(vector<vector<char>> &board);
-
 void printBoard(const vector<vector<char>> &board);
 
 void sudokuPredeterminado();
-
 void sudokuPersonalizado();
 
-/*  
-    
+/*
+
     Main
 
 */
@@ -76,6 +76,7 @@ pair<int, int> nextEmptyPosition(vector<vector<char>> &board, int row, int col) 
     return make_pair(9, 0);
 }
 
+/*  */
 bool isValid(vector<vector<char>> &board, int row, int col, char num) {
     for (int i = 0; i < 9; i++) {
         if (board[row][i] == num || board[i][col] == num ||
@@ -87,6 +88,7 @@ bool isValid(vector<vector<char>> &board, int row, int col, char num) {
 }
 
 bool solve(vector<vector<char>> &board, int row, int col) {
+    /*  */
     pair<int, int> pos = nextEmptyPosition(board, row, col);
     int r = pos.first;
     int c = pos.second;
@@ -103,8 +105,8 @@ bool solve(vector<vector<char>> &board, int row, int col) {
     return false;
 }
 
-void solveSudoku(vector<vector<char>> &board) {
-    solve(board, 0, 0);
+bool solveSudoku(vector<vector<char>> &board) {
+    return solve(board, 0, 0);
 }
 
 void printBoard(const vector<vector<char>> &board) {
@@ -157,8 +159,10 @@ void sudokuPersonalizado() {
     cout << "\nTablero Ingresado:\n";
     printBoard(board);
 
-    solveSudoku(board);
-
-    cout << "\nTablero Resuelto:\n";
-    printBoard(board);
+    if (solveSudoku(board)) {
+        cout << "\nTablero Resuelto:\n";
+        printBoard(board);
+    }else{
+        cout << "El tablero con los datos ingresados no tiene solución.\n\n";
+    }
 }
