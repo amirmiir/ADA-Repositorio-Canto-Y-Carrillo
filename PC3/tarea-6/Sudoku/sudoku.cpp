@@ -162,7 +162,7 @@ void sudokuPersonalizado() {
     if (solveSudoku(board)) {
         cout << "\nTablero Resuelto:\n";
         printBoard(board);
-    }else{
+    } else {
         cout << "El tablero con los datos ingresados no tiene solución.\n\n";
     }
 }
